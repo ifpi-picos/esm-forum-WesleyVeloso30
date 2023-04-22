@@ -41,6 +41,17 @@ function get_num_respostas(id_pergunta) {
   return resultado['count(*)'];
 }
 
+function editar_perguntas(id, texto) {
+  const params = [texto, id];
+  bd.exec('UPDATE perguntas set texto=? where id_pergunta=?', params);
+}
+
+function remover_perguntas(id_pergunta) {
+  const params = [id_pergunta];
+  console.log(id_pergunta)
+  bd.exec('DELETE from perguntas where id_pergunta=?', params);
+}
+
 exports.reconfig_bd = reconfig_bd;
 exports.listar_perguntas = listar_perguntas;
 exports.cadastrar_pergunta = cadastrar_pergunta;
@@ -48,3 +59,5 @@ exports.cadastrar_resposta = cadastrar_resposta;
 exports.get_pergunta = get_pergunta;
 exports.get_respostas = get_respostas;
 exports.get_num_respostas = get_num_respostas;
+exports.editar_perguntas = editar_perguntas;
+exports.remover_perguntas = remover_perguntas;
