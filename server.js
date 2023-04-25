@@ -79,7 +79,7 @@ app.post('/pergunta', (req, res) => {
     const novaPergunta = req.body.novaPergunta;
     console.log(novaPergunta)
     console.log(id)
-    const pergunta = modelo.editar_perguntas(id, novaPergunta);
+    const pergunta = modelo.editar_pergunta(id, novaPergunta);
     res.render('pergunta-sucesso', {
       pergunta
     });
@@ -93,7 +93,7 @@ app.post('/pergunta', (req, res) => {
 app.get('/perguntas', (req, res) => {
   try {
     const id_pergunta = req.query.id_pergunta;
-    modelo.remover_perguntas(id_pergunta);
+    modelo.remover_pergunta(id_pergunta);
     res.render('pergunta-sucesso');
   }
   catch(erro) {
