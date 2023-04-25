@@ -15,9 +15,9 @@ const perguntas = [{
 }
 ];
 var n_respostas = new Map();
-n_respostas.set(1,{ 'count(*)': 5 })
-n_respostas.set(2,{ 'count(*)': 10 })
-n_respostas.set(3,{ 'count(*)': 15 })
+n_respostas.set(1,{ 'count(*)': 5 });
+n_respostas.set(2,{ 'count(*)': 10 });
+n_respostas.set(3,{ 'count(*)': 15 });
 
 function recuperar_todas_perguntas() {
     perguntas.forEach(pergunta => pergunta['num_respostas'] = recuperar_num_respostas(pergunta['id_pergunta']));
